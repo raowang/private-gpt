@@ -79,7 +79,7 @@ class EmbeddingComponent:
                 ollama_settings = settings.ollama
                 self.embedding_model = OllamaEmbedding(
                     model_name=ollama_settings.embedding_model,
-                    base_url=ollama_settings.embedding_api_base,
+                    base_url=ollama_settings.embedding_api_base or ollama_settings.api_base,
                 )
             case "azopenai":
                 try:
